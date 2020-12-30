@@ -1,0 +1,80 @@
+/******* Postlist 2018-08-05 *******/
+
+/* Some basic styling */
+.postlist h3 {font-size: 22px; line-height: 1.2em; margin-top: 0; padding-top: 0}
+.postlist p, .postlist .morelink a {font-size: 14px; line-height: 1.4em;}
+.withthumb .lcp-container {margin-left: 220px;} 
+.morelink {text-align: right;}
+
+/* Styling of the outer container */
+.postlist {
+    border: 1px solid #ccc;
+	background: rgba(255, 255, 255, 0.7);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0px;
+    padding: 20px;
+    overflow: auto;
+}
+
+/* The image magic */
+.thumbmagic {
+  float: left; 
+  display: inline-block; 
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 0;  
+  padding-bottom: 150px;
+}
+.thumbmagic img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 0;
+  max-height: none;
+  max-width: none;
+/* min-width: 200px; width: auto; height: 100%; /* Use for portrait display */
+  min-height: 150px; height: auto; width: 100%; /* Use for landscape display */
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+/* The responsive magic */
+@media screen and (max-width: 800px) {
+  .thumbmagic {float: none; display: block; margin: 10px auto 20px auto;}
+  .thumbmagic:empty {display: none;}
+  .withthumb .lcp-container {margin-left: 0px; text-align: center;}
+}
+
+/* The cardview */
+.cardview.postlist {padding: 0;}
+.cardview.postlist h3 {margin-top: 20px;}
+.cardview .thumbmagic {float: none; width: 100%; padding-bottom: 38%; margin-top: 0;}
+.cardview .lcp-container {margin: 0; padding: 0 20px 20px 20px;}
+
+/* Multicolumn */
+@media ( min-width: 767px ) {
+.cardview.postlist, .nothumb.postlist {float: left; width: 48%;}
+.cardview.postlist:nth-of-type(2n+1), .nothumb.postlist:nth-of-type(2n+1) {margin-right: 4%;}
+.cardview.postlist:nth-of-type(2n+3), .nothumb.postlist:nth-of-type(2n+3) {clear: both;}
+}
+
+/* Multicolumn 3 > 2 > 1 Version */ /* Comment the upper version and uncomment this one to use it
+@media ( min-width: 767px ) and ( max-width: 1100px ) {
+.cardview.postlist, .nothumb.postlist {float: left; width: 48%;}
+.cardview.postlist:nth-of-type(2n+1), .nothumb.postlist:nth-of-type(2n+1) {margin-right: 4%;}
+.cardview.postlist:nth-of-type(2n+3), .nothumb.postlist:nth-of-type(2n+3) {clear: both;}
+}
+@media ( min-width: 1101px ) {
+.cardview.postlist, .nothumb.postlist {float: left; width: 32%; margin-right: 2%;}
+.cardview.postlist:nth-of-type(3n+3), .nothumb.postlist:nth-of-type(3n+3) {margin-right: 0;}
+.cardview.postlist:nth-of-type(3n+4), .nothumb.postlist:nth-of-type(3n+4) {clear: both;}
+}
+*/
+
+/* Pagination */
+.lcp_paginator li {border: 1px solid #ccc!important; box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1); color: #777;}
+.lcp_paginator li a {color: #aaa;}
+ul.lcp_paginator {padding: 0 0 20px 0!important;}
+ul.lcp_paginator:before {content: ""; display: table; clear: both;} 
